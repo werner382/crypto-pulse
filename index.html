@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Pulse - Real-Time Cryptocurrency News</title>
+    <meta name="description" content="Stay ahead with real-time cryptocurrency news, price updates, and new coin discoveries.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%230a0e17' stroke='%2300d4aa' stroke-width='4'/><text x='50' y='65' text-anchor='middle' font-size='40' fill='%2300d4aa'>₿</text></svg>">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <i data-lucide="activity" class="logo-icon"></i>
+                <span class="logo-text">CRYPTO<span class="logo-accent">PULSE</span></span>
+            </div>
+            <nav class="nav">
+                <a href="#" class="nav-link active" data-page="home">
+                    <i data-lucide="home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-link" data-page="trending">
+                    <i data-lucide="trending-up"></i>
+                    <span>Trending</span>
+                </a>
+                <a href="#" class="nav-link" data-page="newcoins">
+                    <i data-lucide="sparkles"></i>
+                    <span>New Coins</span>
+                </a>
+            </nav>
+            <div class="header-right">
+                <div class="market-status">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Markets Open</span>
+                </div>
+                <div class="live-clock" id="clock"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="ticker-wrapper">
+        <div class="ticker-track" id="ticker">
+            <div class="ticker-loading">
+                <div class="skeleton-ticker"></div>
+            </div>
+        </div>
+    </div>
+
+    <main class="main">
+        <section class="hero-section" id="hero-section">
+            <div class="hero-loading">
+                <div class="skeleton-hero"></div>
+            </div>
+        </section>
+
+        <section class="filters-section">
+            <div class="filters-wrapper">
+                <button class="filter-chip active" data-filter="all">
+                    <i data-lucide="globe"></i>
+                    <span>All News</span>
+                </button>
+                <button class="filter-chip" data-filter="defi">
+                    <i data-lucide="blocks"></i>
+                    <span>DeFi</span>
+                </button>
+                <button class="filter-chip" data-filter="nft">
+                    <i data-lucide="image"></i>
+                    <span>NFT</span>
+                </button>
+                <button class="filter-chip" data-filter="layer1">
+                    <i data-lucide="layers"></i>
+                    <span>Layer 1</span>
+                </button>
+                <button class="filter-chip" data-filter="memecoin">
+                    <i data-lucide="smile"></i>
+                    <span>Meme</span>
+                </button>
+                <button class="filter-chip" data-filter="stablecoin">
+                    <i data-lucide="anchor"></i>
+                    <span>Stablecoin</span>
+                </button>
+            </div>
+        </section>
+
+        <div class="content-grid">
+            <section class="news-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i data-lucide="newspaper"></i>
+                        Latest News
+                    </h2>
+                    <span class="update-indicator" id="news-update">
+                        <i data-lucide="refresh-cw"></i>
+                        <span>Updating...</span>
+                    </span>
+                </div>
+                <div class="news-grid" id="news-grid">
+                    <div class="news-card skeleton">
+                        <div class="skeleton-image"></div>
+                        <div class="skeleton-content">
+                            <div class="skeleton-tag"></div>
+                            <div class="skeleton-title"></div>
+                            <div class="skeleton-meta"></div>
+                        </div>
+                    </div>
+                    <div class="news-card skeleton">
+                        <div class="skeleton-image"></div>
+                        <div class="skeleton-content">
+                            <div class="skeleton-tag"></div>
+                            <div class="skeleton-title"></div>
+                            <div class="skeleton-meta"></div>
+                        </div>
+                    </div>
+                    <div class="news-card skeleton">
+                        <div class="skeleton-image"></div>
+                        <div class="skeleton-content">
+                            <div class="skeleton-tag"></div>
+                            <div class="skeleton-title"></div>
+                            <div class="skeleton-meta"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="load-more-wrapper">
+                    <button class="load-more-btn" id="load-more-news">
+                        <i data-lucide="plus"></i>
+                        <span>Load More News</span>
+                    </button>
+                </div>
+            </section>
+
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">
+                        <i data-lucide="flame"></i>
+                        Trending Coins
+                    </h3>
+                    <div class="trending-list" id="trending-coins">
+                        <div class="trending-item skeleton">
+                            <div class="skeleton-avatar"></div>
+                            <div class="skeleton-info"></div>
+                        </div>
+                        <div class="trending-item skeleton">
+                            <div class="skeleton-avatar"></div>
+                            <div class="skeleton-info"></div>
+                        </div>
+                        <div class="trending-item skeleton">
+                            <div class="skeleton-avatar"></div>
+                            <div class="skeleton-info"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">
+                        <i data-lucide="sparkles"></i>
+                        New Listings
+                    </h3>
+                    <div class="new-listings" id="new-listings">
+                        <div class="listing-item skeleton">
+                            <div class="skeleton-avatar"></div>
+                            <div class="skeleton-info"></div>
+                        </div>
+                        <div class="listing-item skeleton">
+                            <div class="skeleton-avatar"></div>
+                            <div class="skeleton-info"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section market-stats">
+                    <h3 class="sidebar-title">
+                        <i data-lucide="bar-chart-3"></i>
+                        Market Stats
+                    </h3>
+                    <div class="stats-grid" id="market-stats">
+                        <div class="stat-card">
+                            <span class="stat-label">Total Market Cap</span>
+                            <span class="stat-value" id="total-mcap">--</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-label">24h Volume</span>
+                            <span class="stat-value" id="total-volume">--</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-label">BTC Dominance</span>
+                            <span class="stat-value" id="btc-dominance">--</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <section class="new-coins-section" id="new-coins-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i data-lucide="rocket"></i>
+                    Newly Listed Cryptocurrencies
+                </h2>
+                <span class="badge-new">
+                    <i data-lucide="zap"></i>
+                    Updated Live
+                </span>
+            </div>
+            <div class="new-coins-grid" id="new-coins-grid">
+                <div class="coin-card skeleton">
+                    <div class="skeleton-avatar lg"></div>
+                    <div class="skeleton-info"></div>
+                </div>
+                <div class="coin-card skeleton">
+                    <div class="skeleton-avatar lg"></div>
+                    <div class="skeleton-info"></div>
+                </div>
+                <div class="coin-card skeleton">
+                    <div class="skeleton-avatar lg"></div>
+                    <div class="skeleton-info"></div>
+                </div>
+                <div class="coin-card skeleton">
+                    <div class="skeleton-avatar lg"></div>
+                    <div class="skeleton-info"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <i data-lucide="activity" class="logo-icon"></i>
+                        <span class="logo-text">CRYPTO<span class="logo-accent">PULSE</span></span>
+                    </div>
+                    <p class="footer-tagline">Real-time cryptocurrency insights for the modern trader.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <a href="#">About</a>
+                        <a href="#">API</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="#">Documentation</a>
+                        <a href="#">Price Alerts</a>
+                        <a href="#">RSS Feed</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="disclaimer">Data provided by CoinGecko API. Prices update every 60 seconds. Not financial advice.</p>
+                <p class="copyright">Last updated: <span id="last-updated">--</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
