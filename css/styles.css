@@ -1114,3 +1114,596 @@ body {
         text-align: center;
     }
 }
+/* Interactividad para las tarjetas tipo noticia */
+.news-card {
+  background-color: #121212;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  margin-bottom: 20px;
+  text-align: center;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+  cursor: pointer;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background-color: #121212;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  color: #fff;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+.close:hover {
+  color: #fff;
+}
+/* Sección Support Us */
+.support-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.support-section .section-title {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+  .support-section .section-title {
+    font-size: 1.6rem;
+  }
+
+  .news-card {
+    margin-bottom: 25px;
+  }
+}
+.ticker-bar {
+  background-color: #121212;
+  color: #00e0b8;
+  overflow: hidden;
+  white-space: nowrap;
+  border-bottom: 2px solid #00e0b8;
+  padding: 10px 0;
+}
+
+.ticker-content {
+  display: inline-block;
+  animation: scrollTicker 25s linear infinite;
+}
+
+.ticker-content span {
+  margin: 0 30px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+@keyframes scrollTicker {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+.milestone {
+  animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 10px rgba(0,255,204,0.2); }
+  to   { box-shadow: 0 0 25px rgba(0,255,204,0.6); }
+}
+section.text-center img {
+  border: 3px solid #00BCD4; /* borde aqua */
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0 0 15px rgba(0,188,212,0.5);
+}
+section.text-center h2 {
+  color: #00BCD4;
+  font-weight: bold;
+}
+section.text-center p.lead {
+  color: #fff;
+}
+.qr-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* permite que se acomoden si la pantalla es pequeña */
+}
+
+.qr-item img {
+  width: 280px;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+/* Colores por wallet */
+.metamask h4 { color: #f6851b; }   /* naranja Metamask */
+.binance h4 { color: #f3ba2f; }    /* amarillo Binance */
+.okx h4 { color: #ffffff; }        /* blanco OKX */
+
+/* Botones */
+.btn-outline-warning {
+  border-color: #f3ba2f;
+  color: #f3ba2f;
+}
+.btn-outline-warning:hover {
+  background-color: #f3ba2f;
+  color: #000;
+}
+.btn-outline-light {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+.btn-outline-light:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+.qr-item h4 {
+  font-size: 1.5rem; /* tamaño más grande y legible */
+  font-weight: 700;  /* más grueso para destacar */
+}
+.support-message {
+  font-size: 1.2rem;          /* tamaño cómodo y legible */
+  font-style: italic;         /* mantiene el tono de cita */
+  color: #00ffff;             /* tono cian para resaltar sobre fondo oscuro */
+  margin-top: 20px;
+}
+.support-message {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #66faff; /* celeste suave, igual tono que el título */
+  text-align: center;
+  margin-top: 25px;
+}
+.support-message {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #00ffff; /* mismo tono celeste del título */
+  text-align: center;
+  margin-top: 25px;
+}
+section .support-message {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #00ffff !important; /* fuerza el mismo celeste del título */
+  text-align: center;
+  margin-top: 25px;
+}
+.support-message {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #66faff!important; /* celeste más suave */
+  text-align: center;
+  margin-top: 25px;
+}
+.pizza-day {
+  background-color: #0d1b2a;   /* azul oscuro elegante */
+  border: 3px solid #FFC107;   /* marco amarillo */
+  border-radius: 10px;
+  padding: 25px;
+  margin: 40px auto;
+  max-width: 650px;
+  text-align: center;
+  position: relative;
+}
+
+.pizza-day h4 {
+  color: #ffffff;              /* título en blanco */
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.pizza-day p {
+  color: #ffffff;              /* texto en blanco */
+  font-size: 1.1rem;
+  margin: 8px 0;
+}
+
+.pizza-day .sub-text {
+  color: #000000;              /* texto secundario en negro */
+  font-style: italic;
+  margin-top: 12px;
+}
+
+/* Barra amarilla superior */
+.pizza-bar {
+  background-color: #FFC107;
+  height: 8px;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: glow 2s infinite alternate; /* animación */
+}
+
+/* Animación de brillo */
+@keyframes glow {
+  from { box-shadow: 0 0 5px #FFC107; }
+  to   { box-shadow: 0 0 20px #FFD54F; }
+}
+.pizza-day {
+  background-color: #0d1b2a;   /* azul oscuro elegante */
+  border: 3px solid #FFC107;   /* marco amarillo */
+  border-radius: 10px;
+  padding: 25px;
+  margin: 40px auto;
+  max-width: 650px;
+  text-align: center;
+  position: relative;
+}
+
+.pizza-day h4 {
+  color: #ffffff;              /* título en blanco */
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.pizza-day p {
+  color: #ffffff;              /* texto principal en blanco */
+  font-size: 1.1rem;
+  margin: 8px 0;
+}
+
+.pizza-day .sub-text {
+  color: #000000;              /* frases motivacionales en negro */
+  font-style: italic;
+  margin-top: 12px;
+}
+
+/* Barra amarilla superior */
+.pizza-bar {
+  background-color: #FFC107;
+  height: 8px;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: glow 2s infinite alternate; /* animación */
+}
+
+/* Animación de brillo */
+@keyframes glow {
+  from { box-shadow: 0 0 5px #FFC107; }
+  to   { box-shadow: 0 0 20px #FFD54F; }
+}
+.pizza-day {
+  background-color: #0d1b2a;   /* azul oscuro elegante */
+  border: 3px solid #FFC107;   /* marco amarillo */
+  border-radius: 10px;
+  padding: 25px;
+  margin: 40px auto;
+  max-width: 650px;
+  text-align: center;
+  position: relative;
+}
+
+.pizza-day h4 {
+  color: #ffffff;              /* título en blanco */
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.pizza-day p {
+  color: #ffffff;              /* todo el texto en blanco */
+  font-size: 1.1rem;
+  margin: 8px 0;
+}
+
+/* Barra amarilla superior */
+.pizza-bar {
+  background-color: #FFC107;
+  height: 8px;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: glow 2s infinite alternate; /* animación */
+}
+
+/* Animación de brillo */
+@keyframes glow {
+  from { box-shadow: 0 0 5px #FFC107; }
+  to   { box-shadow: 0 0 20px #FFD54F; }
+}
+.pizza-day {
+  background-color: #0d1b2a;   /* fondo azulado */
+  border: 3px solid #FFC107;   /* marco amarillo */
+  border-radius: 10px;
+  padding: 35px;               /* más espacio interno */
+  margin: 40px auto;
+  max-width: 650px;
+  text-align: center;
+  position: relative;
+}
+
+.pizza-day h4 {
+  color: #ffffff;              /* título en blanco */
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.pizza-day p {
+  color: #ffffff;              /* texto en blanco */
+  font-size: 1.1rem;
+  margin: 18px 0;              /* más espacio entre párrafos */
+  line-height: 1.6;
+}
+
+/* Última frase destacada */
+.pizza-day p:last-of-type {
+  color: #FFC107;              /* amarillo */
+  font-size: 1.3rem;           /* un poco más grande */
+  font-weight: 600;
+}
+
+/* Barra amarilla superior */
+.pizza-bar {
+  background-color: #FFC107;
+  height: 8px;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: glow 2s infinite alternate;
+}
+
+/* Animación de brillo */
+@keyframes glow {
+  from { box-shadow: 0 0 5px #FFC107; }
+  to   { box-shadow: 0 0 20px #FFD54F; }
+}
+.pizza-day {
+  background-color: #0d1b2a;   /* fondo azulado */
+  border: 3px solid #FFC107;   /* marco amarillo */
+  border-radius: 10px;
+  padding: 35px;
+  margin: 40px auto;
+  max-width: 650px;
+  text-align: center;
+  position: relative;
+}
+
+.pizza-day h4 {
+  color: #ffffff;              /* título en blanco */
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.pizza-day p {
+  color: #ffffff;              /* texto normal en blanco */
+  font-size: 1.1rem;
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+/* Frases motivacionales en amarillo */
+.pizza-day .highlight {
+  color: #FFC107;              /* amarillo */
+  font-size: 1.3rem;           /* más grande */
+  font-weight: 700;
+  margin-top: 25px;
+}
+
+/* Barra amarilla superior */
+.pizza-bar {
+  background-color: #FFC107;
+  height: 8px;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: glow 2s infinite alternate;
+}
+
+/* Animación de brillo */
+@keyframes glow {
+  from { box-shadow: 0 0 5px #FFC107; }
+  to   { box-shadow: 0 0 20px #FFD54F; }
+}
+.pizza-day {
+  background-color: #0d1b2a;   /* fondo azulado */
+  border: 3px solid #FFC107;   /* marco amarillo */
+  border-radius: 10px;
+  padding: 35px;
+  margin: 40px auto;
+  max-width: 650px;
+  text-align: center;
+  position: relative;
+}
+
+.pizza-day h4 {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+/* Espaciado entre secciones */
+.pizza-section {
+  margin: 25px 0;
+}
+
+.pizza-section p {
+  color: #ffffff;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+/* Bloque amarillo final */
+.pizza-section.highlight p {
+  color: #FFC107;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* Barra amarilla superior */
+.pizza-bar {
+  background-color: #FFC107;
+  height: 8px;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: glow 2s infinite alternate;
+}
+
+/* Animación de brillo */
+@keyframes glow {
+  from { box-shadow: 0 0 5px #FFC107; }
+  to   { box-shadow: 0 0 20px #FFD54F; }
+}
+.pizza-day .quote {
+  color: #ffffff;        /* texto en blanco */
+  font-size: 0.9rem;     /* más pequeño */
+  font-style: italic;    /* estilo cursiva */
+  margin-top: 25px;
+}
+#contador-dias {
+  transition: opacity 1.5s ease-in-out;
+}
+#contador-dias {
+  transition: opacity 1.5s ease-in-out;
+  color: #FFC107;
+  font-weight: 700;
+}
+#contador-dias {
+  color: #FFC107;       /* Amarillo cálido */
+  font-weight: 700;
+  transition: opacity 1.5s ease-in-out;
+}
+.pizza-day {
+  max-width: 800px;   /* limita el ancho */
+  margin: 0 auto;     /* centra el bloque */
+  padding: 20px;      /* espacio interno */
+}
+
+.pizza-section {
+  margin-bottom: 15px; /* espacio entre secciones */
+}
+.pizza-day {
+  max-width: 1000px;   /* ancho máximo del bloque */
+  margin: 0 auto;      /* centra horizontalmente */
+  padding: 20px;       /* espacio interno */
+}
+
+.pizza-section {
+  margin-bottom: 15px; /* espacio entre secciones */
+}
+.pizza-day {
+  max-width: 1000px;   /* ancho máximo en pantallas grandes */
+  margin: 0 auto;      /* centra horizontalmente */
+  padding: 20px;
+}
+
+.pizza-section {
+  margin-bottom: 15px;
+}
+
+/* Ajustes para pantallas medianas */
+@media (max-width: 992px) {
+  .pizza-day {
+    max-width: 90%;    /* ocupa casi todo el ancho */
+    padding: 15px;
+  }
+}
+
+/* Ajustes para pantallas pequeñas (móvil) */
+@media (max-width: 576px) {
+  .pizza-day {
+    max-width: 100%;   /* ocupa todo el ancho */
+    padding: 10px;
+  }
+
+  .pizza-section {
+    margin-bottom: 10px;
+    font-size: 0.95rem; /* texto un poco más compacto */
+  }
+
+  #contador-dias {
+    font-size: 1rem;   /* contador legible pero no enorme */
+  }
+}
+.pizza-day {
+  max-width: 1000px;             /* ancho máximo en escritorio */
+  margin: 30px auto;             /* margen superior e inferior */
+  padding: 20px;
+  background: linear-gradient(135deg, #1c1c1c, #2a2a2a); /* degradado sutil */
+  border-radius: 12px;           /* bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* sombra suave */
+}
+
+.pizza-section {
+  margin-bottom: 15px;
+}
+
+/* Responsive para tablets */
+@media (max-width: 992px) {
+  .pizza-day {
+    max-width: 90%;
+    padding: 15px;
+    border-radius: 10px;
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 576px) {
+  .pizza-day {
+    max-width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .pizza-section {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+  }
+
+  #contador-dias {
+    font-size: 1rem;
+  }
+}

@@ -1,9 +1,9 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>520exchange - Real-Time Cryptocurrency News</title>
+    <title>exchange - Real-Time Cryptocurrency News</title>
     <meta name="description" content="Stay ahead with real-time cryptocurrency news, price updates, and new coin discoveries.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -194,6 +194,56 @@
                 </div>
             </aside>
         </div>
+<section class="py-5 text-center">
+  <div class="container">
+    <h2 class="mb-4">Support Us with Crypto</h2>
+    <div class="qr-container">
+
+      <!-- Metamask -->
+      <div class="qr-item metamask">
+        <h4>Metamask BTC Wallet</h4>
+        <img src="images/metamask-btc-qr.png" alt="Metamask BTC QR">
+        <p class="mt-2 text-muted">Address: bc1qxyz1234567890abcdef...</p>
+        <a href="bitcoin:bc1qxyz1234567890abcdef..." class="btn btn-outline-warning mt-2">
+          Abrir en Wallet
+        </a>
+        <small class="text-muted d-block mt-1">
+          Escanea o abre con tu wallet preferida (Metamask, Binance, OKX)
+        </small>
+      </div>
+
+      <!-- Binance -->
+      <div class="qr-item binance">
+        <h4>Binance BTC Wallet</h4>
+        <img src="images/binance-btc-qr.png" alt="Binance BTC QR">
+        <p class="mt-2 text-muted">Address: 13fgNGDmEHC8cgfYJgGiW6mw1SYXP1NhMU</p>
+        <a href="bitcoin:13fgNGDmEHC8cgfYJgGiW6mw1SYXP1NhMU" class="btn btn-outline-warning mt-2">
+          Abrir en Wallet
+        </a>
+        <small class="text-muted d-block mt-1">
+          Escanea o abre con tu wallet preferida (Binance, Metamask, OKX)
+        </small>
+      </div>
+
+      <!-- OKX -->
+      <div class="qr-item okx">
+        <h4>OKX BTC Wallet</h4>
+        <img src="images/okx-btc-qr.png" alt="OKX BTC QR">
+        <p class="mt-2 text-muted">Address: 1Jd9kLmNopQrsTuVwXyZaBcDeFgHiJkLmN</p>
+        <a href="bitcoin:1Jd9kLmNopQrsTuVwXyZaBcDeFgHiJkLmN" class="btn btn-outline-dark mt-2">
+          Abrir en Wallet
+        </a>
+        <small class="text-muted d-block mt-1">
+          Escanea o abre con tu wallet preferida (OKX, Binance, Metamask)
+        </small>
+      </div>
+
+    </div>
+  </div>
+</section>
+<p class="support-message mt-4">
+  “Your support helps us keep 520Exchange growing and delivering real-time crypto insights.”
+</p>
 
         <section class="new-coins-section" id="new-coins-section">
             <div class="section-header">
@@ -265,16 +315,58 @@
     <script src="js/api.js"></script>
     <script src="js/components.js"></script>
     <script src="js/app.js"></script>
-    <!-- Botón de contribución -->
-<div class="text-center my-4">
-  <a href="https://www.paypal.com/donate?business=tu_correo_paypal@example.com&currency_code=USD" 
-     class="btn btn-warning btn-lg shadow">
-    💛 Contribuir al proyecto 520Exchange
-  </a>
-  <p class="mt-2 text-muted">
-    Tu apoyo nos acerca a la licencia de $5,450 USD
-  </p>
-</div>
+   <section class="pizza-day">
+  <div class="pizza-bar"></div>
+  <h4>🍕 Pizza Day</h4>
+
+  <div class="pizza-section">
+    <p>El 22 de mayo de 2010, 10000 BTC compraron dos pizzas.</p>
+    <p>Hoy celebramos el primer pago real con Bitcoin.</p>
+  </div>
+
+  <div class="pizza-section">
+    <p id="contador-dias"></p>
+  </div>
+
+  <div class="pizza-section highlight">
+    <p>Cada gran historia empieza con un pequeño gesto.</p>
+    <p>Tu contribución hoy puede ser el próximo hito.</p>
+  </div>
+
+  <!-- Cita inspiradora -->
+  <p class="quote">“La excelencia no es un destino, es una forma de vida.” – Tom Peters</p>
+</section>
+
+<script>
+  function actualizarContadorAnimado() {
+    const pizzaDay = new Date("2010-05-22");
+    const hoy = new Date();
+    const diferencia = hoy - pizzaDay;
+    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+    const contador = document.getElementById("contador-dias");
+
+    let inicio = 0;
+    const velocidad = 10; // milisegundos entre incrementos
+    const incremento = Math.ceil(dias / 200); // ajusta la velocidad del conteo
+
+    contador.style.opacity = 0;
+    setTimeout(() => {
+      contador.style.transition = "opacity 1.5s ease-in-out";
+      contador.style.opacity = 1;
+    }, 200);
+
+    const animacion = setInterval(() => {
+      inicio += incremento;
+      if (inicio >= dias) {
+        inicio = dias;
+        clearInterval(animacion);
+      }
+      contador.textContent = "Han pasado " + inicio + " días desde la primera compra con Bitcoin.";
+    }, velocidad);
+  }
+
+  actualizarContadorAnimado();
+</script>
 
 </body>
 </html>
